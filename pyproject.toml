@@ -47,7 +47,7 @@ dev = [
 mak = "mobile_audio_kit.main:run"
 
 [tool.hatch.build.targets.wheel]
-packages = ["mak"]
+packages = ["mobile_audio_kit"]
 
 [tool.hatch.build.targets.sdist]
-include = ["mak", "LICENSE", "README.md"]
+include = ["mobile_audio_kit", "LICENSE", "README.md"]
