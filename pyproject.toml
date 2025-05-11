@@ -1,0 +1,53 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mobile-audio-kit"
+version = "1.0.0"
+description = "A terminal utility for managing audio file metadata"
+readme = "README.md"
+requires-python = ">=3.8,<3.13"
+license = {file = "LICENSE"}
+authors = [
+    {name = "Ivan Uemlianin", email = "ivan@llaisdy.co.uk"}
+]
+keywords = ["music", "audio", "metadata", "terminal", "tui"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Multimedia :: Sound/Audio",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "mutagen>=1.47.0",
+    "pillow>=11.2.1",
+    "textual>=3.2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.5",
+    "textual-dev>=1.7.0",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/llaisdy/mak"
+"Bug Tracker" = "https://github.com/llaisdy/mak/issues"
+
+[project.scripts]
+mak = "mobile_audio_kit.main:run"
+
+[tool.hatch.build.targets.wheel]
+packages = ["mak"]
+
+[tool.hatch.build.targets.sdist]
+include = ["mak", "LICENSE", "README.md"]
